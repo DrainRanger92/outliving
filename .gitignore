@@ -1,0 +1,7 @@
+# Dependencies
+.obsidian/
+.vscode/
+.idea/
+*.tmp
+*.bak
+.gitkeep

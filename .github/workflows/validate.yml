@@ -1,0 +1,63 @@
+name: Validate Design Documents
+
+on:
+  push:
+    branches: [main, designer/*, architect/*]
+  pull_request:
+
+jobs:
+  validate:
+    name: Frontmatter · Links · Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check frontmatter in design docs
+        run: |
+          echo "=== Checking frontmatter ==="
+          FAIL=0
+          for f in docs/*.md design/*.md; do
+            [ -f "$f" ] || continue
+            if ! head -1 "$f" | grep -q '^---$'; then
+              echo "❌ $f: missing YAML frontmatter"
+              FAIL=1
+            fi
+            # Check for status field
+            if ! grep -q '^status:' "$f"; then
+              echo "⚠️  $f: missing 'status' in frontmatter"
+            fi
+            # Check for created date
+            if ! grep -q '^created:' "$f"; then
+              echo "⚠️  $f: missing 'created' date in frontmatter"
+            fi
+          done
+          exit $FAIL
+
+      - name: Check for broken internal links
+        run: |
+          echo "=== Checking internal links ==="
+          FAIL=0
+          for f in docs/*.md design/*.md .harness/*.md; do
+            [ -f "$f" ] || continue
+            # Extract [[wiki links]]
+            grep -oP '\[\[([^\]|]+)(\|[^\]]+)?\]\]' "$f" | sed 's/\[\[//;s/|.*//;s/\]\]//' | sort -u | while read -r link; do
+              target="docs/${link}.md"
+              if [ ! -f "$target" ]; then
+                target="design/${link}.md"
+              fi
+              if [ ! -f "$target" ]; then
+                echo "⚠️  $f: broken link to '$link'"
+              fi
+            done
+          done
+
+      - name: Check document structure (sections)
+        run: |
+          echo "=== Checking required sections ==="
+          for f in docs/*.md design/*.md; do
+            [ -f "$f" ] || continue
+            # Every design doc should have Open Questions section
+            if ! grep -q 'Открытые вопросы' "$f"; then
+              echo "⚠️  $f: missing 'Открытые вопросы' section"
+            fi
+          done
