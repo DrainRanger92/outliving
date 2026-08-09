@@ -11,6 +11,27 @@
 - Ветки: `designer/*` (агент-воркер), `architect/*` (архитектурные решения) — от `main`
 - Рабочая директория: корень репо
 
+## Agent Pipeline (Polaris FSM)
+Диспетчер (`outliving-issue-dispatch.py`) — детерминированный FSM, тикает каждые 7 минут.
+Один тик = максимум один переход. Агенты НИКОГДА не трогают лейблы.
+
+```
+ready-for-design → designer-working → designer-complete → critic review
+   → design-approved → Mark reviews → merge
+   → design-rejected (≤3 rounds) → ready-for-design (rework)
+   → design-rejected (>3 rounds) → needs-human
+```
+
+| Label | Meaning |
+|---|---|
+| `ready-for-design` | Задача готова, без assignee — worker берёт |
+| `designer-working` | Worker (outliving-designer, Flash) в работе |
+| `designer-complete` | Worker закончил, PR открыт — ждёт критика |
+| `design-approved` | Critic (outliving-critic, Pro) одобрил — ждёт ревью Марка |
+| `design-rejected` | Critic отклонил — rework (≤3 попыток) |
+| `needs-human` | 3+ reject или неразрешимое противоречие |
+| `paused` | Диспетчер пропускает (ручное управление) |
+
 ## Что мы строим
 **Outliving** — воксельная Action-RPG в сеттинге тёмного славянского фэнтези.
 По мотивам «Трое из Леса» Юрия Никитина.
