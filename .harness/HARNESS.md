@@ -113,9 +113,10 @@ ready-for-design → designer-working → designer-complete → critic review
 ## Биомы (что спроектировано)
 | Tier | Биом | Статус | Часы |
 |---|---|---|---|
-| 1 | Цветущие Луга | ✅ v1.0 (docs/06-meadows-biome-design.md) | 0–5 |
-| 2 | Болото | 🟡 Остов (в progression-design), нет полного biome-design | 5–15 |
-| 3 | ??? | 🔴 Заглушка | 15–30 |
+| 1 | Цветущие Луга | ✅ v1.0 (docs/07-meadows-biome-design.md) | 0–5 |
+| 2 | Болото | 🟡 Остов (в progression-design), есть biome-design (design/01-bog-biome-design.md) | 5–15 |
+| 3 | Тёмный Лес | 🟡 v1.0 (design/04-tier3-biome-design.md) | 15–30 |
+| 4 | Степь + Киммеры | 🟡 v1.0 (design/08-kimmers-steppe-design.md) | 30+ |
 
 ## Design Rules (для воркера)
 1. **Один враг = одно правило.** Не перегружать. Каждый враг учит чему-то новому
