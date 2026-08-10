@@ -1,9 +1,10 @@
 ---
 created: 2026-08-09
+updated: 2026-08-10
 status: draft
 tags: [gamedev, outliving, magic, design, core]
 parent: "[[gdd]]"
-related: ["[[three-from-the-forest]]", "[[progression-design]]", "[[combat-design]]", "[[premises]]", "[[setting-nikitin]]", "[[02-odyssey-divine-factions]]"]
+related: ["[[three-from-the-forest]]", "[[progression-design]]", "[[combat-design]]", "[[premises]]", "[[setting-nikitin]]", "[[02-odyssey-divine-factions]]", "[[09-multiplayer-sessions]]"]
 supersedes: "docs/01-gdd.md §3 (Магическая система — Черновик)"
 ---
 
@@ -672,4 +673,4 @@ supersedes: "docs/01-gdd.md §3 (Магическая система — Чер�
 - [ ] **Визуал рун на земле:** воксельные символы или particle effects? Как стилизовать под тёмное славянское фэнтези?
 - [ ] **Рецепты добрых рун:** где их находить? У учителей? В руинах? Как часть квестов?
 - [ ] **Инвентарь рун:** сколько рун Олег может нести? 4 на поясе + 4 в посохе = 8? Или меньше?
-- [ ] **Баланс в коопе:** 2 Олега с 3 зонами каждый = 6 зон на поле боя. Не слишком ли мощно? Нужны ли ограничения на общее число зон в мультиплеере?
+- [x] **Баланс в коопе:** Решено в [[09-multiplayer-sessions]] v0.2 (§6): friendly fire — естественный балансир; зоны одного элемента не стакаются; опциональный глобальный лимит 6 зон (запасной клапан, решение по прототипу).
