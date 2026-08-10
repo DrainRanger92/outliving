@@ -3,7 +3,7 @@ created: 2026-08-09
 status: draft
 tags: [gamedev, outliving, biome, bog, world-design, core]
 parent: "[[progression-design]]"
-related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[meadows-biome-design]]", "[[setting-nikitin]]", "[[premises]]"]
+related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[meadows-biome-design]]", "[[setting-nikitin]]", "[[premises]]", "[[03-economy-and-craft]]"]
 ---
 
 # Биом: Болото v1.0
@@ -273,6 +273,9 @@ related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[meadows-biome-des
 
   Что НЕ купить: двуручное оружие, щиты, латы —
   дрягва воюют лёгким и острым, не держат строй.
+
+  > 📐 Полная таблица торговли Дрягвы (по уровням репутации)
+  > и 4 пути к редким болотным ресурсам: [[03-economy-and-craft]] §4.2, §3.
 
   Что делать: сохраниться у кострового тотема.
                Поговорить со Старшим дрягвы (квест:

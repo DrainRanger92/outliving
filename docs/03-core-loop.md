@@ -4,6 +4,7 @@ updated: 2026-08-04
 status: draft
 tags: [gamedev, outliving, core-loop, design]
 parent: "[[gdd]]"
+related: ["[[03-economy-and-craft]]"]
 ---
 
 # Core Gameplay Loop v0.2 — от Cube World к Outliving
@@ -178,6 +179,8 @@ parent: "[[gdd]]"
 ---
 
 ## 7. Мирная ветка — та же петля, другой риск
+
+> 📐 Полный дизайн экономики и путей к редким ресурсам: [[03-economy-and-craft]].
 
 ```
 Ты в деревне Полян ──▶ «На болотах редкий мох. Кузнец заплатит»

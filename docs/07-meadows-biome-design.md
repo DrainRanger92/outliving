@@ -3,7 +3,7 @@ created: 2026-08-07
 status: draft
 tags: [gamedev, outliving, biome, meadows, world-design, core]
 parent: "[[core-loop]]"
-related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[progression-design]]", "[[premises]]"]
+related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[progression-design]]", "[[premises]]", "[[03-economy-and-craft]]"]
 ---
 
 # Биом: Цветущие Луга v1.0
@@ -230,6 +230,8 @@ related: ["[[combat-design]]", "[[three-from-the-forest]]", "[[progression-desig
 
   Что НЕ купить: ОРУЖИЕ. Поляне не воины. Мечи, луки,
   копья — только найти в руинах или скрафтить.
+
+  > 📐 Полная таблица торговли Полян: [[03-economy-and-craft]] §4.1.
 
   Что делать: сохраниться у костра в центре. Поговорить
   с охотником (даёт первый квест: «принеси три заячьих
